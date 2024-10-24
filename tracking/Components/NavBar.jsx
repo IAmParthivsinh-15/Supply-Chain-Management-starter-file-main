@@ -33,7 +33,7 @@ const NavBar = ({ children }) => {
           <div className="flex items-center justify-between py-5 md:block">
             <a href="javascript:void(0)">
               <img
-                src="https://www.floatui.com/logo.svg"
+                src="https://th.bing.com/th/id/OIP.UCGQ65c8YCpqPuI2B2Q9pAHaHw?rs=1&pid=ImgDetMain"
                 width={120}
                 height={50}
               ></img>

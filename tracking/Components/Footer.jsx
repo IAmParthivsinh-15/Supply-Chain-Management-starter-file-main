@@ -25,7 +25,7 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
         <div className="justify-between sm:flex">
           <div className="space-y-6">
-            <img className="w-32" src="https://www.floatui.com/logo.svg" />
+            <img className="w-32" src="https://th.bing.com/th/id/OIP.UCGQ65c8YCpqPuI2B2Q9pAHaHw?rs=1&pid=ImgDetMain" />
             <p className="max-w-md">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptatum, illum.
