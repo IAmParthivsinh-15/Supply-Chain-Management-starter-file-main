@@ -12,7 +12,7 @@ const Table = ({ setCreateShipmentModel, allShipmentsdata }) => {
     return dataTime;
   };
 
-  console.log(allShipmentsdata);
+  console.log("all shipments data : ",allShipmentsdata);
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 md:px-8">

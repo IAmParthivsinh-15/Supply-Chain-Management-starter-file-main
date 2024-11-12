@@ -13,7 +13,7 @@ const index = () => {
     completeShipment,
     getShipment,
     startShipment,
-    getShipmentCount
+    getShipmentsCount
   } = useContext(TrackingContext);
 
 
@@ -55,7 +55,7 @@ const index = () => {
     openProfile={openProfile}
     setOpenProfile={setOpenProfile}
     currentUser={currentUser}
-    getShipmentCount={getShipmentCount}
+    getShipmentsCount={getShipmentsCount}
     ></Profile>
     <CompleteShipment
     completeModel={completeModel}

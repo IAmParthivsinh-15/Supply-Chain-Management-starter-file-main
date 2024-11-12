@@ -9,10 +9,10 @@ const GetShipment = ({ getModel, setGetModel, getShipment }) => {
     setSingleShipmentData(getData);
     console.log(getData);
   };
-  console.log(singleShipmentData);
+  console.log("single shipment data : ",singleShipmentData);
 
   const converTime = (time) => {
-    const newTime = new Data(time);
+    const newTime = new Date(time);
     const dataTime = new Intl.DateTimeFormat("en-US", {
       year: "numeric",
       month: "2-digit",
@@ -40,9 +40,14 @@ const GetShipment = ({ getModel, setGetModel, getShipment }) => {
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
-                <path
+                {/* <path
                   fillRule="evenodd"
                   d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                /> */}
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 011.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                   clipRule="evenodd"
                 />
               </svg>
@@ -68,10 +73,13 @@ const GetShipment = ({ getModel, setGetModel, getShipment }) => {
                 Get Details
               </button>
             </form>
-            {singleShipmentData == undefined ? (
+            {singleShipmentData === undefined ? (
               ""
             ) : (
               <div className="text-left">
+                {
+                  console.log("single ShipmentData : 0 ", singleShipmentData)
+                }
                 <p>Sender : {singleShipmentData.sender.slice(0, 25)}..</p>
                 <p>Receiver : {singleShipmentData.receiver.slice(0, 25)}..</p>
                 <p>PickUp Time : {converTime(singleShipmentData.pickupTime)}</p>

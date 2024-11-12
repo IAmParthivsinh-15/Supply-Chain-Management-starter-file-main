@@ -6,11 +6,13 @@ const Profile = ({
   openProfile,
   setOpenProfile,
   currentUser,
-  getShipmentCount,
+  getShipmentsCount,
 }) => {
   const [count, setCount] = useState();
   useEffect(() => {
-    const getShipmentData = getShipmentCount();
+    console.log("function type : ",typeof getShipmentsCount);
+
+    const getShipmentData = getShipmentsCount();
     return async () => {
       const allData = await getShipmentData;
       setCount(allData);

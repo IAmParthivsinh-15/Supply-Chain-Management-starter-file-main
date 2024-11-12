@@ -113,6 +113,9 @@ contract Tracking {
         address _receiver,
         uint256 _index
     ) public {
+        require(_index < shipments[_sender].length, "Invalid shipment index");
+        require(_index < typeShipments.length, "Invalid typeShipment index");
+
         Shipment storage shipment = shipments[_sender][_index];
         TypeShipment storage typeShipment = typeShipments[_index];
 
@@ -159,6 +162,36 @@ contract Tracking {
         emit ShipmentPaid(_sender, _receiver, amount);
     }
 
+    // function getShipment(
+    //     address _sender,
+    //     uint256 _index
+    // )
+    //     public
+    //     view
+    //     returns (
+    //         address,
+    //         address,
+    //         uint256,
+    //         uint256,
+    //         uint256,
+    //         uint256,
+    //         ShipmentStatus,
+    //         bool
+    //     )
+    // {
+    //     Shipment memory shipment = shipments[_sender][_index];
+    //     return (
+    //         shipment.sender,
+    //         shipment.receiver,
+    //         shipment.pickupTime,
+    //         shipment.deliveryTime,
+    //         shipment.distance,
+    //         shipment.price,
+    //         shipment.status,
+    //         shipment.isPaid
+    //     );
+    // }
+
     function getShipment(
         address _sender,
         uint256 _index
@@ -176,6 +209,9 @@ contract Tracking {
             bool
         )
     {
+        // Ensure the index is valid
+        require(_index < shipments[_sender].length, "Invalid shipment index");
+
         Shipment memory shipment = shipments[_sender][_index];
         return (
             shipment.sender,
@@ -190,10 +226,15 @@ contract Tracking {
     }
 
     function getShipmentCount(address _sender) public view returns (uint256) {
+        require(
+            shipments[_sender].length > 0,
+            "No shipments found for this sender"
+        );
         return shipments[_sender].length;
     }
 
     function getAllTransactions() public view returns (TypeShipment[] memory) {
+        require(typeShipments.length > 0, "No transactions available");
         return typeShipments;
     }
 }
